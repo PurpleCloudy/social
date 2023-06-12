@@ -26,6 +26,11 @@ SECRET_KEY = 'django-insecure-q!&ox)r#k3^91miwyjo@4e-uud640kuk0y1xn-^tm3guu7x3@t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type('application/javascript', '.js', True)
+    mimetypes.add_type('text/css', '.css', True)
+
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'django_extensions',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
